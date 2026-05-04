@@ -10,7 +10,7 @@ def home():
 def health():
   return "OK"
 
-@app.get("/calculation")
+@app.route("/calculation", methods = ["GET"])
 def calculation ():
  vol = float(request.args.get("vol"))
  time1 = float(request.args.get("time1"))

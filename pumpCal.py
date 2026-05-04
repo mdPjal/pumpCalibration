@@ -2,6 +2,8 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+MAINTENANCE = True
+
 @app.route("/")
 def home():
   return "Server Is Alive"
@@ -10,7 +12,6 @@ def home():
 def health():
   return "OK"
 
-MAINTENANCE = False
 @app.route("/calculation", methods = ["GET"])
 def calculation ():
   if MAINTENANCE:

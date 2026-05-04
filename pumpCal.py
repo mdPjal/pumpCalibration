@@ -1,5 +1,7 @@
 from flask import Flask, request
 
+app = Flask(__name__)
+
 @app.get("/")
 def home():
   return "Server Is Alive"

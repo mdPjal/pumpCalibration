@@ -2,7 +2,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-MAINTENANCE = False
+MAINTENANCE = True
 
 @app.route("/")
 def home():
@@ -10,12 +10,12 @@ def home():
 
 @app.route("/health", methods = ["GET","HEAD"])
 def health():
-  return "OK"
+  return "OK", 200
 
 @app.route("/calculation", methods = ["GET"])
 def calculation ():
   if MAINTENANCE:
-    return str("Service Unavailable!")
+    return str("Service Unavailable!", 503)
     
   vol = float(request.args.get("vol"))
   time1 = float(request.args.get("time1"))

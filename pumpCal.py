@@ -2,11 +2,11 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.get("/")
+@app.route("/")
 def home():
   return "Server Is Alive"
 
-@app.get("/health")
+@app.route("/health", methods = ["GET","HEAD"])
 def health():
   return "OK"
 

@@ -18,4 +18,4 @@ def calculation ():
  time3 = float(request.args.get("time3"))
  avg = (time1 + time2 + time3) / 3
  result = ((vol / 1000) * 3600) / avg
- return round(result,1)
+ return str(round(result,1))

@@ -2,7 +2,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-MAINTENANCE = True
+MAINTENANCE = False
 
 @app.route("/")
 def home():

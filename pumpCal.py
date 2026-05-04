@@ -10,7 +10,7 @@ def home():
 def health():
   return "OK"
 
-MAINTENANCE = false
+MAINTENANCE = False
 @app.route("/calculation", methods = ["GET"])
 def calculation ():
   if MAINTENANCE:
